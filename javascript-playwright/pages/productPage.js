@@ -3,6 +3,7 @@ export class ProductPage {
     this.page = page;
 
     this.addToCartButton = page.getByTestId('add-to-cart');
+    this.cartPageButton = page.getByTestId('shopping-cart-link');
   }
 
   async open(itemId) {
@@ -13,5 +14,9 @@ export class ProductPage {
 
   async addToCart() {
     await this.addToCartButton.click();
+  }
+
+  async openCartPage() {
+    await this.cartPageButton.click();
   }
 }
