@@ -9,7 +9,7 @@ export class CheckoutStepOnePage {
   }
 
   async fillFirstNameField(firstName) {
-    await this.FirstNameField.fill(firstName);
+    await this.firstNameField.fill(firstName);
   }
 
   async fillLastNameField(lastName) {
@@ -17,10 +17,10 @@ export class CheckoutStepOnePage {
   }
 
   async fillPostalCodeField(postalCode) {
-    await this.lastNameField.fill(postalCode);
+    await this.zipPostalCodeField.fill(postalCode);
   }
 
-  async clickContinueButton() {
-    await this.continueButton.click;
+  async continue() {
+    await this.continueButton.click();
   }
 }

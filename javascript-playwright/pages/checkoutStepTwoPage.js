@@ -2,11 +2,11 @@ export class CheckoutStepTwoPage {
   constructor(page) {
     this.page = page;
 
-    this.itemNames = page.getByTestId('inventory-item-name');
+    this.itemListNames = page.getByTestId('inventory-item-name');
     this.finishButton = page.getByTestId('finish');
   }
 
-  async clickFinishButton() {
+  async finish() {
     this.finishButton.click();
   }
 }

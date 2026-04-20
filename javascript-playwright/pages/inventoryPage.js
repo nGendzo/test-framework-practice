@@ -6,7 +6,7 @@ export class InventoryPage {
     this.burgerMenuItemList = page.getByRole('link', { name: 'All Items' });
     this.addToCartButton = page.getByTestId('add-to-cart');
     this.cartLink = page.getByTestId('shopping-cart-link');
-    this.itemNames = page.getByTestId('inventory-item-name');
+    this.itemListNames = page.getByTestId('inventory-item-name');
   }
 
   async open() {
@@ -18,7 +18,7 @@ export class InventoryPage {
   }
 
   async openItem(name) {
-    await this.itemNames.filter({ hasText: name }).click();
+    await this.itemListNames.filter({ hasText: name }).click();
   }
 
   async addToCart() {
