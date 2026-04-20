@@ -64,7 +64,7 @@ test.describe('main flows', async () => {
     ]);
   });
 
-  test.only('buy an item @e2e', async () => {
+  test('buy an item @e2e', async () => {
     await inventoryPage.openItem(products.sauceLabsOnesie.name);
     await productPage.addToCart();
     await productPage.openCart();
