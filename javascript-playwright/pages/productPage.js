@@ -4,6 +4,8 @@ export class ProductPage {
 
     this.addToCartButton = page.getByTestId('add-to-cart');
     this.cartPageButton = page.getByTestId('shopping-cart-link');
+    this.burgerMenuButton = page.locator('#react-burger-menu-btn');
+    this.inventoryPageButton = page.getByTestId('inventory-sidebar-link');
   }
 
   async open(itemId) {
@@ -16,7 +18,20 @@ export class ProductPage {
     await this.addToCartButton.click();
   }
 
-  async openCartPage() {
+  async openCart() {
     await this.cartPageButton.click();
+  }
+
+  async openBurgerMenu() {
+    await this.burgerMenuButton.click();
+  }
+
+  async openInventoryPage() {
+    this.inventoryPageButton.click();
+  }
+
+  async goToInventory() {
+    await this.openBurgerMenu();
+    await this.openInventoryPage();
   }
 }

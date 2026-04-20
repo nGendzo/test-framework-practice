@@ -1,4 +1,4 @@
-export class CheckoutStepTwoPage {
+export class CheckoutCompletePage {
   constructor(page) {
     this.page = page;
 
