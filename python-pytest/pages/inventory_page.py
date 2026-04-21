@@ -1,3 +1,4 @@
+#dasdasadasd
 class InventoryPage:
     def __init__(self, page):
         self.page = page
@@ -5,5 +6,6 @@ class InventoryPage:
 
     def get_title(self):
         return self.title_text.inner_text()
+    
     
     

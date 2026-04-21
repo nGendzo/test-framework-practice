@@ -2,10 +2,10 @@ from playwright.sync_api import expect
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 
-def test_successful_login(page):
-    login_page = LoginPage(page)
-    inventory_page = InventoryPage(page)
 
+def test_successful_login(page):
+    inventory_page = InventoryPage(page)
+    login_page = LoginPage(page)
 
     login_page.navigate()
     login_page.login("standard_user", "secret_sauce")
