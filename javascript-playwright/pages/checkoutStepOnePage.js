@@ -8,15 +8,9 @@ export class CheckoutStepOnePage {
     this.continueButton = page.getByTestId('continue');
   }
 
-  async fillFirstNameField(firstName) {
+  async fillCheckoutForm({ firstName, lastName, postalCode }) {
     await this.firstNameField.fill(firstName);
-  }
-
-  async fillLastNameField(lastName) {
     await this.lastNameField.fill(lastName);
-  }
-
-  async fillPostalCodeField(postalCode) {
     await this.zipPostalCodeField.fill(postalCode);
   }
 

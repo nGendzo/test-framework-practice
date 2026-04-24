@@ -69,9 +69,11 @@ test.describe('main flows', async () => {
     await productPage.addToCart();
     await productPage.openCart();
     await cartPage.checkout();
-    await checkoutStepOnePage.fillFirstNameField('Walter');
-    await checkoutStepOnePage.fillLastNameField('White');
-    await checkoutStepOnePage.fillPostalCodeField('1234');
+    await checkoutStepOnePage.fillCheckoutForm({
+      firstName: 'Walter',
+      lastName: 'White',
+      postalCode: '1234',
+    });
     await checkoutStepOnePage.continue();
     await checkoutStepTwoPage.finish();
 
