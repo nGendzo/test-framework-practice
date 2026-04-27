@@ -1,1 +1,1 @@
-Yvelaze giji proekti
+Javascript & Python Automation !
