@@ -37,6 +37,11 @@ def test_successful_login(page):
 @pytest.mark.e2e
 
 def test_checkout_flow(page):
+    """
+    To verify user can log in with valid credentials and
+    make a purchase on available products
+    """
+
     login_p = LoginPage(page)
     inventory_p = InventoryPage(page)
     product_p = ProductPage(page)
@@ -50,17 +55,19 @@ def test_checkout_flow(page):
     login_p.login("standard_user", "secret_sauce")
     expect(inventory_p.title_text).to_have_text("Products")
 
-    inventory_p.open_item("Sauce Labs Backpack") 
-    
+    #inventory_p.open_item("Sauce Labs Backpack") 
+    product_p.open(3)
+
     product_p.add_to_cart()
-    product_p.open_cart()
+    product_p.cart_page()
 
     cart_p.checkout()
     
     checkout_info_p.submit_checkout_info("Walter", "White", "12345")
 
-    print(f"Verifying item: {overview_p.get_product_name()}")
+    print(f"\nVerifying item: {overview_p.get_product_name()}")
     overview_p.finish_checkout()
+    overview_p.click_finish_checkout()
 
     expect(complete_p.complete_header).to_have_text("Thank you for your order!")
     print("Test passed: Purchase completed successfully!")

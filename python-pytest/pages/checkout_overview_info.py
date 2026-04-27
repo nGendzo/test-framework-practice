@@ -2,12 +2,12 @@ class CheckoutOverview:
     def __init__(self, page):
         self.page = page
 
-        self.title = page.get_by_test_id("title")
-        self.item_name = page.get_by_test_id("inventory-item-name")
-        self.item_price = page.get_by_test_id("inventory-item-price")
-        self.payment_info = page.get_by_test_id("payment-info-value")
-        self.finish_button = page.get_by_test_id("finish")
-        self.cancel_button = page.get_by_test_id("cancel")
+        self.title = page.locator(".title")
+        self.item_name = page.locator(".inventory_item_name")
+        self.item_price = page.locator(".inventory-item-price")
+        self.payment_info = page.locator(".summary_value_label")
+        self.finish_button = page.locator("#finish")
+        self.cancel_button = page.locator("#cancel")
 
     def get_product_name(self):
         return self.item_name.inner_text()

@@ -2,9 +2,9 @@ class CheckoutComplete:
     def __init__(self, page):
         self.page = page
 
-        self.complete_header = page.get_by_test_id("complete-header")
-        self.complete_text = page.get_by_test_id("complete-text")
-        self.back_home_button = page.get_by_test_id("back-to-products")
+        self.complete_header = page.locator(".complete-header")
+        self.complete_text = page.locator(".complete-text")
+        self.back_home_button = page.locator("#back-to-products")
 
     def get_success_message(self):
         return self.complete_header.inner_text()

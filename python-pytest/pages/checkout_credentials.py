@@ -1,11 +1,11 @@
 class CheckoutCredentials:
     def __init__(self, page):
         self.page = page
-        self.first_name_input = page.get_by_test_id("first-name")
-        self.last_name_input = page.get_by_test_id("last-name")
-        self.postal_code_input = page.get_by_test_id("postal-code")
-        self.continue_button = page.get_by_test_id("continue")
-        self.cancel_button = page.get_by_test_id("cancel")
+        self.first_name_input = page.locator("#first-name")
+        self.last_name_input = page.locator("#last-name")
+        self.postal_code_input = page.locator("#postal-code")
+        self.continue_button = page.locator("#continue")
+        self.cancel_button = page.locator("#cancel")
 
     def submit_checkout_info(self, first, last, zip_code):
         self.first_name_input.fill(first)
