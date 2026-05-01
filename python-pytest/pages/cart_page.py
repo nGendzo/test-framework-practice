@@ -4,6 +4,7 @@ class CartPage:
 
         self.checkout_button = page.locator("#checkout")
         self.item_list_name = page.get_by_test_id("inventory-item-name")
+        self.number_of_items = page.locator(".cart_item")
 
     def open(self):
         self.page.goto("https://www.saucedemo.com/cart.html")
