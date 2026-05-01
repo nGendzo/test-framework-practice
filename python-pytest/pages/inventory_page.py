@@ -3,6 +3,9 @@ class InventoryPage:
         self.page = page
         self.title_text = page.locator(".title")
         self.inventory_items = page.locator(".inventory_item")
+        self.burger_button = page.locator("#react-burger-menu-btn")
+        self.burger_menu_items = page.locator(".bm-item-list a")
+        self.logout_button = page.locator("#logout_sidebar_link")
 
     def get_title(self):
         return self.title_text.inner_text()
@@ -13,4 +16,12 @@ class InventoryPage:
     def open_item(self, item_name):
         self.page.get_by_text(item_name).click()
     
+    def open_burger_menu(self):
+        self.burger_button.click()
+
+    def get_burger_items_count(self):
+        return self.burger_menu_items.count()
+    
+    def logout(self):
+        self.logout_button.click()
     
